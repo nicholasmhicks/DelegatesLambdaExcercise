@@ -8,10 +8,10 @@ namespace FileParserNetStandard_Tests {
     public class Tests {
         private FileHandler _fh;
         private DataParser _dp;
-        private string _csvPath = "/Users/anguyen/Documents/Rider/data.csv";  // change to appropriate path
-        private string _tsvPath = "/Users/anguyen/Documents/Rider/data.tsv";  // change to appropriate path
+        private string _csvPath = "C:\\Users\\STUDENT\\Desktop\\delegates\\data.csv";  // change to appropriate path
+        private string _tsvPath = "C:\\Users\\STUDENT\\Desktop\\delegates\\data.tsv";  // change to appropriate path
 
-        private string _writeFile = "/Users/anguyen/Documents/Rider/dataWrite.txt";  // change to appropriate path
+        private string _writeFile = "C:\\Users\\STUDENT\\Desktop\\delegates\\dataWrite.txt";  // change to appropriate path
        
         private List<List<string>> _data;
 
@@ -27,7 +27,7 @@ namespace FileParserNetStandard_Tests {
             _data.Add(new List<string>() {"3", "Jill", "Rhodes"});
             _data.Add(new List<string>() {"4", "Bill", "Holmes"});
             _data.Add(new List<string>() {"5", "Peter", "Watson"});
-            _data.Add(new List<string>() {"6", "Ophelia", "Turing"});
+            _data.Add(new List<string>() {"\"6", "Ophelia", "Turing\""});
             _data.Add(new List<string>() {"7", "Catherine", "Clark"});
             _data.Add(new List<string>() {" 8", "    Wilfred     ", "Sutherland "});
             _data.Add(new List<string>() {"9", "Rickgard", "Arthurs"});

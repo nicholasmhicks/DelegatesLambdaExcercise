@@ -12,6 +12,16 @@ namespace FileParserNetStandard {
         /// <returns></returns>
         public List<List<string>> StripWhiteSpace(List<List<string>> data) {
 
+            List<List<string>> newlist = new List<List<string>>();
+
+            foreach (var items in data)
+            {
+                for (var i = 0;i < items.Count();i++)
+                {
+                    items[i] = items[i].Trim();
+                }
+            }
+
             return data;
         }
 
@@ -21,7 +31,15 @@ namespace FileParserNetStandard {
         /// <param name="data"></param>
         /// <returns></returns>
         public List<List<string>> StripQuotes(List<List<string>> data) {
+            List<List<string>> newlist = new List<List<string>>();
 
+            foreach (var items in data)
+            {
+                for (var i = 0; i < items.Count(); i++)
+                {
+                    items[i] = items[i].Trim('"');
+                }
+            }
             return data;
         }
 

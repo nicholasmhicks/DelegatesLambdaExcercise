@@ -16,9 +16,9 @@ namespace FileParserNetStandard {
         /// <param name="filePath"></param>
         /// <returns></returns>
         public List<string> ReadFile(string filePath) {
-            List<string> lines = new List<string>();
 
-            return lines;
+            return File.ReadAllLines(filePath).ToList<string>();
+
         }
 
         
@@ -28,9 +28,23 @@ namespace FileParserNetStandard {
         /// <param name="filePath"></param>
         /// <param name="delimeter"></param>
         /// <param name="rows"></param>
-        public void WriteFile(string filePath, char delimeter, List<List<string>> rows) {
+        public void WriteFile(string filePath, char delimeter, List<List<string>> rows)
+        {
+            List<string> data = new List<string>();
 
-            
+            string line = "";
+
+            foreach (var items in rows)
+            {
+                foreach (var item in items)
+                {
+                    line += item + delimeter;
+                }
+                line = line.Trim(delimeter);
+                data.Add(line);
+                line = "";
+            }
+            File.WriteAllLines(filePath, data);
         }
         
         /// <summary>
@@ -39,8 +53,14 @@ namespace FileParserNetStandard {
         /// <param name="data"></param>
         /// <param name="delimeter"></param>
         /// <returns></returns>
-        public List<List<string>> ParseData(List<string> data, char delimeter) {
-            return new List<List<string>>();  //-- return result here
+        public List<List<string>> ParseData(List<string> data, char delimeter)
+        {
+           List<List<string>> biglist = new List<List<string>>();
+
+           foreach (var item in data)
+                biglist.Add(item.Split(delimeter).ToList());
+
+            return biglist;
         }
         
         /// <summary>
@@ -48,8 +68,14 @@ namespace FileParserNetStandard {
         /// </summary>
         /// <param name="data"></param>
         /// <returns></returns>
-        public List<List<string>> ParseCsv(List<string> data) {
-            return new List<List<string>>();  //-- return result here
+        public List<List<string>> ParseCsv(List<string> data)
+        {
+            List<List<string>> biglist = new List<List<string>>();
+
+            foreach (var item in data)
+                biglist.Add(item.Split(',').ToList());
+
+            return biglist;
         }
     }
 }
