@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using FileParserNetStandard;
 using NUnit.Framework;
+using ObjectLibrary;
 
 namespace PersonHandler_Tests {
     [TestFixture]
@@ -10,7 +11,7 @@ namespace PersonHandler_Tests {
         private FileHandler _fh;
         private DataParser _dp;
 
-        private string csvPath = "/users/anguyen/Documents/Rider/processed_data.csv"; // change to appropriate path
+        private string csvPath = "C:\\Users\\STUDENT\\Desktop\\delegates\\processed_data.csv"; // change to appropriate path
         private List<List<string>> data;
 
         private List<Person> people;
@@ -38,7 +39,7 @@ namespace PersonHandler_Tests {
             var oldest = ph.GetOldest();
             
             Assert.AreEqual(2, oldest.Count);
-            var result = oldest.Where(person => person.Id == 404 || person.Id == 468).ToList();
+            var result = oldest.Where(person => person.Id == 205 || person.Id == 402).ToList();
 
             if (result.Count == 2) {
                 Assert.True(true);

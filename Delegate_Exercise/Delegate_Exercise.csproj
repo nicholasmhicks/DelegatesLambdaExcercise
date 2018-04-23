@@ -45,10 +45,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ClassLibrary1\ClassLibrary1.csproj">
-      <Project>{f11c14ff-17a8-4ad3-93b2-077be9734b82}</Project>
-      <Name>ClassLibrary1</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FileParserNetStandard\FileParserNetStandard.csproj">
       <Project>{3ed47081-9daf-44af-be6e-0d4a4e5873aa}</Project>
       <Name>FileParserNetStandard</Name>
